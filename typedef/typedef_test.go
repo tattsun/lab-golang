@@ -21,3 +21,16 @@ func TestTypedef(t *testing.T) {
 		t.Fatalf("got %d", si.Integer())
 	}
 }
+
+func TestTypedefEquals(t *testing.T) {
+	s1 := "hogehoge"
+	s2 := "hogehoge"
+	if interface{}(s1) != interface{}(s2) {
+		t.Fail()
+	}
+
+	ss := StringInt(s1)
+	if interface{}(s1) == interface{}(ss) {
+		t.Fail()
+	}
+}
