@@ -47,3 +47,16 @@ func TestStructs(t *testing.T) {
 		t.Fatalf("got %d", c.Calculate(2))
 	}
 }
+
+func TestStructNil(t *testing.T) {
+	type hoge struct {
+	}
+	var h hoge
+	// h = nil // Cannot assign nil to struct type
+
+	var hp *hoge
+	hp = nil
+
+	t.Log(h)
+	t.Log(hp)
+}
